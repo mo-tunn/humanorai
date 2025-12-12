@@ -1,0 +1,10 @@
+Model: Linear_SVM
+
+              precision    recall  f1-score   support
+
+       Human       0.99      0.99      0.99      3299
+          AI       0.99      0.99      0.99      2601
+
+    accuracy                           0.99      5900
+   macro avg       0.99      0.99      0.99      5900
+weighted avg       0.99      0.99      0.99      5900
