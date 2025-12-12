@@ -1,0 +1,10 @@
+Model: Gradient_Boosting
+
+              precision    recall  f1-score   support
+
+       Human       0.86      0.98      0.92      3299
+          AI       0.96      0.80      0.88      2601
+
+    accuracy                           0.90      5900
+   macro avg       0.91      0.89      0.90      5900
+weighted avg       0.91      0.90      0.90      5900

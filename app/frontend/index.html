@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human or AI?</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="bg-animation"></div>
+    <div class="main-container">
+        <header>
+            <h1>Human or AI?</h1>
+            <p class="subtitle">Advanced detectıon tool for AI-generated contents</p>
+            <p class="subtitle">ONLY FOR ENGLISH ARTICLES</p>
+            <div class="header-info-grid">
+                <div class="info-group">
+                    <span class="info-label">Total Data</span>
+                    <span class="info-value">29,500</span>
+                </div>
+
+                <div class="info-sep"></div>
+
+                <div class="info-group">
+                    <span class="info-label">TRAINED TOPICS</span>
+                    <div class="topic-tags compact-tags">
+                        <span>AI</span>
+                        <span>Machine Learning</span>
+                        <span>Deep Learning</span>
+                        <span>Transformer</span>
+                        <span>CS</span>
+                        <span>Tech</span>
+                    </div>
+                </div>
+
+                <div class="info-sep"></div>
+
+                <div class="info-group">
+                    <span class="info-label">Human Sources</span>
+                    <div class="source-logos">
+                        <div class="source-item">
+                            <img src="https://cdn.simpleicons.org/arxiv/white" alt="Arxiv">
+                            <span>Arxiv</span>
+                        </div>
+                        <div class="source-item">
+                            <img src="https://cdn.simpleicons.org/wikipedia/white" alt="Wikipedia">
+                            <span>Wikipedia</span>
+                        </div>
+                        <div class="source-item">
+                            <img src="https://cdn.simpleicons.org/cnn/white" alt="CNN">
+                            <span>CNN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-sep"></div>
+
+                <div class="info-group">
+                    <span class="info-label">AI Sources</span>
+                    <div class="source-logos">
+                        <div class="source-item">
+                            <img src="https://cdn.simpleicons.org/meta/white" alt="Llama 3"> <!-- Llama uses Meta -->
+                            <span>Llama 3</span>
+                        </div>
+                        <div class="source-item">
+                            <img src="images/mistral_logo.png" alt="Mistral" class="icon-white">
+                            <span>Mistral</span>
+                        </div>
+                        <div class="source-item">
+                            <img src="https://cdn.simpleicons.org/googlegemini/white" alt="Gemini">
+                            <!-- Gemini uses Google -->
+                            <span>Gemini</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-sep"></div>
+
+                <div class="info-group">
+                    <span class="info-label">Overall Accuracy</span>
+                    <span class="info-value highlight-cyan">94%</span>
+                </div>
+            </div>
+        </header>
+
+
+
+        <div class="input-section">
+            <label>Analyze Your Text</label>
+
+            <div class="upload-area" id="drop-zone">
+                <input type="file" id="file-input" hidden accept=".pdf,.doc,.docx,.txt">
+                <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                    </path>
+                </svg>
+                <p class="upload-text"><span>Drag & drop</span> your PDF,Word or TXT file or browse</p>
+                <div class="file-info" id="file-info">
+                    <svg style="width:16px;height:16px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span id="filename"></span>
+                    <button id="remove-file"
+                        style="background: none; border: none; cursor: pointer; color: #ef4444; margin-left: 8px; display: flex; align-items: center;"
+                        title="Remove File">
+                        <svg style="width:18px;height:18px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="divider">OR</div>
+
+            <textarea id="article-input" placeholder="Paste the article you want to analyze here..."></textarea>
+        </div>
+
+        <div class="action-area">
+            <button id="analyze-button" class="btn-primary">
+                Start Analysis
+            </button>
+        </div>
+
+        <div id="results-card">
+            <h2 class="results-title">Analysis Results</h2>
+            <div id="results-content">
+            </div>
+            <!-- Legend Container -->
+            <!-- Legend Container -->
+            <div id="decision-legend" class="legend-container">
+                <h4 class="legend-title">Decision Criteria</h4>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #ef4444;"></span>
+                        AI (>60%)
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #f59e0b;"></span>
+                        Uncertain (40-60%)
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #10b981;"></span>
+                        Human (&lt;40%)
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button id="open-accuracy-modal"
+                    style="background: none; border: 1px solid var(--primary-color); color: var(--primary-color); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                    View Model Accuracy & Comparison Stats
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="accuracy-modal"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center; overflow-y: auto;">
+            <div
+                style="background: white; width: 90%; max-width: 1000px; border-radius: 20px; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto; margin: 20px;">
+                <button id="close-modal"
+                    style="position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                <h2 class="results-title" style="margin-bottom: 30px;">Model Accuracy & Comparison</h2>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px;">
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 16px; text-align: center;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary); font-size: 1.1rem;">Core Models
+                            Accuracy</h3>
+                        <img src="images/model_comparison_accuracy.png" alt="Model Comparison Accuracy"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;"
+                            onclick="window.open(this.src, '_blank')">
+                    </div>
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 16px; text-align: center;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary); font-size: 1.1rem;">Extra Models
+                            Comparison</h3>
+                        <img src="images/extra_models_comparison.png" alt="Extra Models Comparison"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;"
+                            onclick="window.open(this.src, '_blank')">
+                    </div>
+                </div>
+
+                <h2 class="results-title"
+                    style="margin-bottom: 30px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px;">Detailed
+                    Analysis</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    <!-- Feature Importance -->
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 16px; text-align: center;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary); font-size: 0.95rem;">Feature
+                            Importance</h3>
+                        <img src="images/feature_importance_analysis.png" alt="Feature Importance"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;"
+                            onclick="window.open(this.src, '_blank')">
+                    </div>
+
+                    <!-- Class Distribution -->
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 16px; text-align: center;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary); font-size: 0.95rem;">Class
+                            Distribution</h3>
+                        <img src="images/viz_class_distribution.png" alt="Class Distribution"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;"
+                            onclick="window.open(this.src, '_blank')">
+                    </div>
+
+                    <!-- Word Count Boxplot -->
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 16px; text-align: center;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary); font-size: 0.95rem;">Word Count
+                            (Boxplot)</h3>
+                        <img src="images/viz_word_count_boxplot.png" alt="Word Count Boxplot"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;"
+                            onclick="window.open(this.src, '_blank')">
+                    </div>
+
+                    <!-- Word Count Histogram -->
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 16px; text-align: center;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary); font-size: 0.95rem;">Word Count
+                            (Histogram)</h3>
+                        <img src="images/viz_word_count_hist.png" alt="Word Count Histogram"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;"
+                            onclick="window.open(this.src, '_blank')">
+                    </div>
+
+                    <!-- AI Wordcloud -->
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 16px; text-align: center;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary); font-size: 0.95rem;">AI Wordcloud
+                        </h3>
+                        <img src="images/viz_wordcloud_ai.png" alt="AI Wordcloud"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;"
+                            onclick="window.open(this.src, '_blank')">
+                    </div>
+
+                    <!-- Human Wordcloud -->
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 16px; text-align: center;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary); font-size: 0.95rem;">Human Wordcloud
+                        </h3>
+                        <img src="images/viz_wordcloud_human.png" alt="Human Wordcloud"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;"
+                            onclick="window.open(this.src, '_blank')">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script type="module" src="js/main.js?v=2"></script>
+</body>
+
+</html>

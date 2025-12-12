@@ -1,0 +1,10 @@
+Model: Naive_Bayes
+
+              precision    recall  f1-score   support
+
+       Human       0.95      0.98      0.96      3299
+          AI       0.97      0.93      0.95      2601
+
+    accuracy                           0.96      5900
+   macro avg       0.96      0.95      0.95      5900
+weighted avg       0.96      0.96      0.96      5900
