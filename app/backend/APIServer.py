@@ -13,7 +13,7 @@ from utils.file_parser import extract_text_from_file
 # --- CONFIG ---
 warnings.filterwarnings('ignore')
 
-app = FastAPI(title="AI Metin Dedektörü API", version="1.0")
+app = FastAPI(title="Human or AI? API", version="1.0")
 
 # CORS
 app.add_middleware(
