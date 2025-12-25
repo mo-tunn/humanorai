@@ -1,0 +1,6 @@
+[tool.sonar]
+projectKey = "humanorai"
+host.url = "http://localhost:9000"
+sources = "."
+python.version = "3.12"
+python.coverage.reportPaths = "coverage.xml"

@@ -5,10 +5,10 @@ import pypdf
 
 def extract_text_from_file(file: UploadFile) -> str:
     filename = file.filename.lower()
-    content = file.file.read()
     text = ""
 
     try:
+        content = file.file.read()
         if filename.endswith('.pdf'):
             pdf_reader = pypdf.PdfReader(io.BytesIO(content))
             for page in pdf_reader.pages:

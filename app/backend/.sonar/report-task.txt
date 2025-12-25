@@ -1,0 +1,6 @@
+projectKey=humanorai
+serverUrl=http://localhost:9000
+serverVersion=25.12.0.117093
+dashboardUrl=http://localhost:9000/dashboard?id=humanorai
+ceTaskId=9cd92050-089b-4ae2-bada-731f53d7e768
+ceTaskUrl=http://localhost:9000/api/ce/task?id=9cd92050-089b-4ae2-bada-731f53d7e768
