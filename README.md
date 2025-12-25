@@ -1,14 +1,14 @@
 
 
 
-# 🕵️‍♂️ AI vs. Human: Abstract Classification System
+# 🕵 AI vs. Human: Abstract Classification System
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Machine Learning](https://img.shields.io/badge/ML-Scikit--Learn-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## 📖 Overview
+##  Overview
 
 This project is a machine learning-based classification system designed to distinguish between **Human-written** and **AI-generated** academic abstracts. Specifically tailored for the domain of **Computer Science, Deep Learning, Machine Learning, and Transformers**.
 
@@ -16,7 +16,7 @@ With the rise of Large Language Models (LLMs) like Llama 3 and Mistral, distingu
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 * **Domain Specific:** Specialized in technical and academic texts (CS/AI/Tech papers).
 * **Multi-Model Approach:** Trains and compares **8 different algorithms** (Random Forest, SVM, MLP, etc.) to find the best performer.
@@ -26,7 +26,7 @@ With the rise of Large Language Models (LLMs) like Llama 3 and Mistral, distingu
 
 ---
 
-## 📊 Dataset & Methodology
+##  Dataset & Methodology
 
 ### 1. Data Collection
 A custom dataset was curated focusing on English academic abstracts:
@@ -50,7 +50,7 @@ The following models are trained and serialized in the `saved_models/` directory
 
 ---
 
-## 📈 Performance & Results
+##  Performance & Results
 
 > **Best Model:** **Random Forest** (Typical performance for this dataset structure).
 
@@ -67,7 +67,7 @@ Detailed metrics are available in `machine-learning/train-test/visualization-res
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Language:** Python 3.12, JavaScript
 * **ML Libraries:** Scikit-learn, NumPy, Pandas, Joblib
@@ -77,7 +77,7 @@ Detailed metrics are available in `machine-learning/train-test/visualization-res
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 AI-Human-Detector/
@@ -104,7 +104,7 @@ AI-Human-Detector/
 
 ---
 
-## 💻 Installation & Usage
+##  Installation & Usage
 
 ### Prerequisites
 
@@ -154,7 +154,7 @@ Open `app/frontend/index.html` in your browser.
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -162,11 +162,5 @@ Open `app/frontend/index.html` in your browser.
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-Distributed under the MIT License.
-
-
-```
 
 ```
