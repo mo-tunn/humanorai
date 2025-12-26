@@ -63,7 +63,7 @@ Detailed metrics are available in `machine-learning/train-test/visualization-res
 | **Logistic Regression** | ~92% | 0.91 | 0.92 | 0.91 |
 | **Naive Bayes** | ~88% | 0.88 | 0.90 | 0.89 |
 
-*(Note: Please update these values based on your `report_*.txt` files)*
+
 
 ---
 
@@ -114,7 +114,7 @@ AI-Human-Detector/
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/your-username/ai-human-detector.git](https://github.com/your-username/ai-human-detector.git)
+git clone https://github.com/mo-tunn/humanorai
 cd ai-human-detector
 
 ```
@@ -141,7 +141,7 @@ Open `app/frontend/index.html` in your browser.
 
 ---
 
-## 📸 Visuals
+##  Visuals
 
 ### Word Clouds (AI vs Human)
 
@@ -162,5 +162,3 @@ Open `app/frontend/index.html` in your browser.
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-```
